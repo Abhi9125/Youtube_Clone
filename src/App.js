@@ -1,7 +1,8 @@
 import "./App.css";
 import Body from "./Components/BodyContainer";
 import Head from "./Components/Head";
-
+import { Provider } from "react-redux";
+import store from "./utils/store";
 /***
  *
  * Header
@@ -19,10 +20,12 @@ import Head from "./Components/Head";
 
 function App() {
   return (
-    <div>
-      <Head />
-      <Body />
-    </div>
+    <Provider store={store}>
+      <div>
+        <Head />
+        <Body />
+      </div>
+    </Provider>
   );
 }
 

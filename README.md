@@ -25,45 +25,46 @@
 - Body
   - Sidebar
   - MenuItems - MainContainer - ButtonList - VideoContainer - VideoCard
+    <br>
     `-->>Notes -- Shortcut for creating a component `rafce``
 - 39:00 - Coding Starts
 - 42:22 - Building Header Component
 - 46:34 - Using CSS Grid --> Grid divide the page into 12 part to use grid we write className="grid grid-flow-col"
   Styling Header Component using Tailwind CSS
-- 54:22 - Building Search bar
+- 54:22 - Building Search bar <br>
   `Commit - 1`
-- 56:28 to 01:06:56 - Building Side Bar
-  We will keep our state of side ar I redux store bcz sidebar I all the component.
-  01:09:06 - npm i @reduxjs/toolkit
+- 56:28 to 01:06:56 - Building Side Bar We will keep our state of side ar I redux store bcz sidebar I all the component.
+- 01:09:06 - npm i @reduxjs/toolkit<br>
   Npm i react-redux
-  01:11:00 -Till 01:15:20 -
-  Building Redux Store
-  01:16:40 - Toggle Functionality
-  01:19:20 - Cursor Pointer
-  01:21:30 - Subscribe to the store
-  01:22:35 - Coding Pattern: Early Return Pattern
-  01:25:25 - Let’s build Main Container
-  Button Component
-  ButtonList Component
-  Props Usage
-  01:31:25 - Asking question to interviewer (APIs or Hardcoded)
-  01:33:30 - YouTune APIs and YouTube API Keys
-  01:38:12 - API Call - Axios v/s Fetch
-  01:45:00 - UseState Hook
-  01:47:45 - Tips: Don’t use Map function at the programming
-  01:52:00 - Developing Video Card Component
-  01:58:00 - Calling 50 videos through API
-  02:01:00- “India” - Regional Code to get popular youtube videos in India
-  02:02:00 - Routing - npm react router-dom
-  02:07:00 Report of explanation about Routing once again
-  02:10:46 Start building “watchpage”
-  02:13:40 - make “home” as clickable functionality
-  02:19:00 - Usage of useSearchParams
-  02:21:06 till 02:27:00 - Making WatchPage video fullscreen
-  02:28:00 - API for Youtube “comments”
-  02:28:22 -Tips for machine Coding interview
-  END
-  —-------------------------------------------------------------------------------------------------------
+- 01:11:00 -Till 01:15:20 -Building Redux Store
+- 01:16:40 - Toggle Functionality
+- 01:19:20 - Cursor Pointer
+- 01:21:30 - Subscribe to the store
+- 01:22:35 - Coding Pattern: Early Return Pattern means return before rendring in the component if case not satisfy.
+  `Commit - 2`
+- 01:25:25 - Let’s build Main Container
+  - Button Component
+  - ButtonList Component
+  - Props Usage
+  - Make list and map the on the list.
+    01:31:25 - Asking question to interviewer (APIs or Hardcoded)
+    01:33:30 - YouTune APIs and YouTube API Keys
+    01:38:12 - API Call - Axios v/s Fetch
+    01:45:00 - UseState Hook
+    01:47:45 - Tips: Don’t use Map function at the programming
+    01:52:00 - Developing Video Card Component
+    01:58:00 - Calling 50 videos through API
+    02:01:00- “India” - Regional Code to get popular youtube videos in India
+    02:02:00 - Routing - npm react router-dom
+    02:07:00 Report of explanation about Routing once again
+    02:10:46 Start building “watchpage”
+    02:13:40 - make “home” as clickable functionality
+    02:19:00 - Usage of useSearchParams
+    02:21:06 till 02:27:00 - Making WatchPage video fullscreen
+    02:28:00 - API for Youtube “comments”
+    02:28:22 -Tips for machine Coding interview
+    END
+    —-------------------------------------------------------------------------------------------------------
 
 18. (Bonus) Advanced Features in YouTube Project
     00:00 - Higher Order Components
