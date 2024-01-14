@@ -1,12 +1,12 @@
 import React from "react";
-import VideoContainner from "./VideoContainner";
+import VideoContainer from "./VideoContainer";
 import ButtonTag from "./ButtonTag";
 
 function MainContianer() {
   return (
     <div>
       <ButtonTag />
-      <VideoContainner />
+      <VideoContainer />
     </div>
   );
 }

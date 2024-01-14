@@ -50,12 +50,14 @@
     `Commit - 3`
     01:31:25 - Asking question to interviewer (APIs or Hardcoded)
     01:33:30 - YouTune APIs and YouTube API Keys
-    01:38:12 - API Call - Axios v/s Fetch
+    01:35:00 - How to get own api key.-- go to youtube api key auth.
+    01:38:12 - API Call - Axios v/s Fetch -- Both are use for fetching the data.
     01:45:00 - UseState Hook
-    01:47:45 - Tips: Don’t use Map function at the programming
+    01:47:45 - Tips: Don’t use Map function at the first time use the programming.
     01:52:00 - Developing Video Card Component
     01:58:00 - Calling 50 videos through API
     02:01:00- “India” - Regional Code to get popular youtube videos in India
+    `Commit - 4`
     02:02:00 - Routing - npm react router-dom
     02:07:00 Report of explanation about Routing once again
     02:10:46 Start building “watchpage”

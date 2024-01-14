@@ -10,7 +10,7 @@ function SideBar() {
 
   return (
     <div className="m-1 shadow-md">
-      <div className="mt-4 px-3 w-36">
+      <div className="mt-4 px-3 w-44">
         <h1 className="font-bold">Home</h1>
         <ul>
           <li>Treadig</li>

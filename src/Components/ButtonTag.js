@@ -15,7 +15,7 @@ function ButtonTag() {
   return (
     <div>
       {list.map((buttonTitle) => (
-        <Button name={buttonTitle} />
+        <Button key={buttonTitle} name={buttonTitle} />
       ))}
       {/* <Button name="All" />
       <Button name="Computer Science" />
