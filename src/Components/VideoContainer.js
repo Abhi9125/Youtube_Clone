@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { YouTube_API } from "../utils/Contant";
 import VideoCard from "./VideoCard";
 import Simmer from "./Simmer";
+import { Link } from "react-router-dom";
 function VideoContainer() {
   const [videoList, setVideoList] = useState([]);
   useEffect(() => {
@@ -19,7 +20,10 @@ function VideoContainer() {
   ) : (
     <div className="flex flex-wrap cursor-pointer">
       {videoList.map((video) => (
-        <VideoCard videoInfo={video} />
+        // this urk know as query param
+        <Link to={"/watch?v=" + video.id} key={video.id}>
+          <VideoCard videoInfo={video} />
+        </Link>
       ))}
       {/* <VideoCard videoInfo={videoList[0]} /> */}
     </div>

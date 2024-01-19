@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 function SideBar() {
   // To Subsubscribe our app we use useSelector is give access to our app.
@@ -11,7 +12,9 @@ function SideBar() {
   return (
     <div className="m-1 shadow-md">
       <div className="mt-4 px-3 w-44">
-        <h1 className="font-bold">Home</h1>
+        <Link to="/">
+          <h1 className="font-bold">Home</h1>
+        </Link>
         <ul>
           <li>Treadig</li>
           <li>Gaming</li>
