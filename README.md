@@ -240,7 +240,8 @@ function Post() {
     —-------------------------------------------------------------------------------------------------------
 
 18. (Bonus) Advanced Features in YouTube Project
-    00:00 - Higher Order Components
+    00:00 - Higher Order Components<br>
+    `Commit 6`
     11:21 - Interview Question - Build Search Functionality, Search API
     21:21 - Debouncing
     30:00 - Google Search API

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { YouTube_API } from "../utils/Contant";
-import VideoCard from "./VideoCard";
+import VideoCard, { AddVideoCard } from "./VideoCard";
 import Simmer from "./Simmer";
 import { Link } from "react-router-dom";
 function VideoContainer() {
@@ -10,15 +10,17 @@ function VideoContainer() {
   }, []);
 
   const getApi = async () => {
-    const jsonData = await fetch(YouTube_API);
-    const data = await jsonData.json();
+    const data = await fetch(YouTube_API);
+    const jsonData = await data.json();
 
-    setVideoList(data.items);
+    setVideoList(jsonData.items);
   };
   return videoList.length === 0 ? (
     <Simmer />
   ) : (
     <div className="flex flex-wrap cursor-pointer">
+      {console.log(videoList)}
+      <AddVideoCard videoInfo={videoList[0]} />
       {videoList.map((video) => (
         // this urk know as query param
         <Link to={"/watch?v=" + video.id} key={video.id}>

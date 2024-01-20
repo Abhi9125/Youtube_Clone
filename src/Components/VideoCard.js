@@ -25,4 +25,16 @@ function VideoCard({ videoInfo }) {
   );
 }
 
+// Higher Order Component --> By using HOC we make a ad videoCard.
+export const AddVideoCard = ({ videoInfo }) => {
+  return (
+    <div>
+      <div className="mx-5 my-2 p-1 px-4 rounded-lg absolute bg-red-500 text-white ">
+        Ad
+      </div>
+      <VideoCard videoInfo={videoInfo} />
+    </div>
+  );
+};
+
 export default VideoCard;
