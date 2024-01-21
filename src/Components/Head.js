@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
 import { Youtube_Suggestion_Api } from "../utils/Contant";
+import { storeSuggestion } from "../utils/SearchCachingSlice";
 
 const Head = () => {
   // Search input use for take input from use.
@@ -36,10 +37,21 @@ const Head = () => {
    * after getting the api show searchSuggestionn on UI.
    *
    */
+
+  // Reading the store.
+  const searchInCache = useSelector((store) => store.search);
   useEffect(() => {
     // Api is calling after 150ms, if use press a key >150ms, so clearTimeout() and new timer start.
-    const timer = setTimeout(() => getSuggestionApi(), 150);
+    // const timer = setTimeout(() => getSuggestionApi(), 150);
 
+    const timer = setTimeout(() => {
+      // searching in store
+      if (searchInCache[searchInput]) {
+        setSearchSuggested(searchInCache[searchInput]);
+      } else {
+        getSuggestionApi();
+      }
+    }, 150);
     // At the time of destroying the component(before rerending the component) it call the return function and it clear the timer.
     return () => {
       clearTimeout(timer);
@@ -47,10 +59,17 @@ const Head = () => {
   }, [searchInput]);
 
   const getSuggestionApi = async () => {
-    // console.log("Api Call  --->" + searchInput);
+    console.log("Api Call  --->" + searchInput);
     const data = await fetch(Youtube_Suggestion_Api + searchInput);
     const jsonData = await data.json();
-    setSearchSuggested(jsonData[1]);
+    // console.log(jsonData);
+    // Update the store in this form -- ex- {"iphone" : [iphone10, iphone11, iphone12]}
+    dispatch(
+      storeSuggestion({
+        [searchInput]: jsonData[1],
+      })
+    );
+    // setSearchSuggested(jsonData[1]);
   };
 
   return (
@@ -97,7 +116,10 @@ const Head = () => {
             {showSuggetion &&
               searchSuggested.map((suggestion) => {
                 return (
-                  <li className="flex m-1 px-1 p-1 hover:bg-gray-300 rounded-xl">
+                  <li
+                    key={suggestion}
+                    className="flex m-1 px-1 p-1 hover:bg-gray-300 rounded-xl"
+                  >
                     <img
                       className="h-5 m-1 px-1 p-1 hover:bg-gray-300 rounded-xl"
                       alt="search_image"

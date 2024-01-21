@@ -254,44 +254,45 @@ function Post() {
 - 01:03:03 - Building Youtube Search Suggestions bar
 - 01:17:00 - Buildig hide and show suggestion.<br>
   `Commit - 7`
-
-01:24:50 - usage of “Data Structures” in Front-end
-01:32:00 - Spread Operator in JavaScript [ES6]
-01:36:00 Creating A Store
-01:44:00 JavaScript Merge Objects (object.aasign())
-01:49:49 - We have achieved a well organized/optimized search [“debouncing”, “cache”] features
-01:55:20 - Developing LRU Cache(Last Recently Used)
-01:59:00 - Interview Question
-N- level nested components(Reddit Example)
-Comments Component
-—----------------------------------------------------------------------------------------------------------------------------
-19.(Bonus) Wrapping up YouTube Project
-00:00 - API key expired - Added new key
-Building Live Chat in Youtube
-Live Chat - Infinite Scroll - Pagination
-Challenges -
-Data Layer(DL) - Get data live
-UI Layer - Update the UI
-11:15 - Data Live
-Web Sockets - API Polling
-16:50 - Does Gmail is webSocket or API Polling?\
- 22:50 - Youtube Comment section uses API Polling
-41:33 - Why page does not freeze despite so much API calls?
-49:20 - Building Chat bar
-01:00:00 - Never write “map” as the first. Later after multiple components working fine.
-01:03:00 - Coding Polling(Live)
-Don’t forget to clear the interval or timeout (setInterval, SetTimeout)
-01:05:52 - Lets build a redux store
-Till 01:13:52 - Perfect mock example of writing Redux Code(Slice)
-01:14:00 use “map”
-01:17:00 “Overflow hidden”
-01:18:00 - Random name Generator
-01:20:40 - Random Strings/ Text Generator
-01:23:45 - Reverse Scrolling - “Unshift” in Redux code - “Splice” usage
-01:30:00 - Build a Imput box to write a comment
-01:37:30 - useState
-01:41:00 - Prevent Default Function
-01:47:00 - Push() instead of unShift()
-01:52:05 - To make infinite Scroll
-End
-—-------------------------**_----------------------------------_**-----------------------------------------------------
+- 01:22:00 - Buildign the caching.
+- 01:24:50 - usage of “Data Structures” in Front-end
+- 01:32:00 - Spread Operator in JavaScript [ES6]
+- 01:36:00 Creating A Store
+- 01:44:00 JavaScript Merge Objects (object.aasign())
+- 01:49:49 - We have achieved a well organized/optimized search [“debouncing”, “cache”] features <br>
+  `Commit -8`
+- 01:55:20 - Developing LRU Cache(Last Recently Used)
+- 01:59:00 - Interview Question
+  N- level nested components(Reddit Example)
+  Comments Component
+  —----------------------------------------------------------------------------------------------------------------------------
+  19.(Bonus) Wrapping up YouTube Project
+  00:00 - API key expired - Added new key
+  Building Live Chat in Youtube
+  Live Chat - Infinite Scroll - Pagination
+  Challenges -
+  Data Layer(DL) - Get data live
+  UI Layer - Update the UI
+  11:15 - Data Live
+  Web Sockets - API Polling
+  16:50 - Does Gmail is webSocket or API Polling?\
+   22:50 - Youtube Comment section uses API Polling
+  41:33 - Why page does not freeze despite so much API calls?
+  49:20 - Building Chat bar
+  01:00:00 - Never write “map” as the first. Later after multiple components working fine.
+  01:03:00 - Coding Polling(Live)
+  Don’t forget to clear the interval or timeout (setInterval, SetTimeout)
+  01:05:52 - Lets build a redux store
+  Till 01:13:52 - Perfect mock example of writing Redux Code(Slice)
+  01:14:00 use “map”
+  01:17:00 “Overflow hidden”
+  01:18:00 - Random name Generator
+  01:20:40 - Random Strings/ Text Generator
+  01:23:45 - Reverse Scrolling - “Unshift” in Redux code - “Splice” usage
+  01:30:00 - Build a Imput box to write a comment
+  01:37:30 - useState
+  01:41:00 - Prevent Default Function
+  01:47:00 - Push() instead of unShift()
+  01:52:05 - To make infinite Scroll
+  End
+  —-------------------------**_----------------------------------_**-----------------------------------------------------
