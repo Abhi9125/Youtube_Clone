@@ -19,7 +19,7 @@ function VideoContainer() {
     <Simmer />
   ) : (
     <div className="flex flex-wrap cursor-pointer">
-      {console.log(videoList)}
+      {/* {console.log(videoList)} */}
       <AddVideoCard videoInfo={videoList[0]} />
       {videoList.map((video) => (
         // this urk know as query param

@@ -1,14 +1,58 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
+import { Youtube_Suggestion_Api } from "../utils/Contant";
 
 const Head = () => {
+  // Search input use for take input from use.
+  const [searchInput, setSearchInput] = useState("");
+  // This give suggestionn at search time
+  const [searchSuggested, setSearchSuggested] = useState([]);
+  // showSuggetion -- use for hide and show the search suggestion
+  const [showSuggetion, setShowSuggestion] = useState(false);
   // DispatchAction updating our store.
   const dispatch = useDispatch();
   const handleToggleMenu = () => {
     dispatch(toggleMenu());
     // console.log("clicked");
   };
+
+  /***
+   * case: 1- In first render useEffect is call and getSuggestionApi() after 150ms, if we do not press any key with in 150ms the api is call,
+   * - render the component
+   * - useEffect();
+   * - start time => make api call after 150ms
+   * - After getting the api show searchSuggestion on UI
+   *
+   *
+   * Case: 2- If the differece b/w two key press is less then 150ms
+   * key -- press I
+   * - useEffect()
+   * - start time => make api call after 150ms
+   * But Key -- press IN, within 150ms
+   * the component rerender again  Before rerendering the component it destroy the previous timer
+   * useEffect();
+   * start timer => make api call after 150ms
+   * after getting the api show searchSuggestionn on UI.
+   *
+   */
+  useEffect(() => {
+    // Api is calling after 150ms, if use press a key >150ms, so clearTimeout() and new timer start.
+    const timer = setTimeout(() => getSuggestionApi(), 150);
+
+    // At the time of destroying the component(before rerending the component) it call the return function and it clear the timer.
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [searchInput]);
+
+  const getSuggestionApi = async () => {
+    // console.log("Api Call  --->" + searchInput);
+    const data = await fetch(Youtube_Suggestion_Api + searchInput);
+    const jsonData = await data.json();
+    setSearchSuggested(jsonData[1]);
+  };
+
   return (
     <div className="grid grid-flow-col shadow-sm h-14">
       <div className="flex items-center grid-cols-1 mx-2 ">
@@ -27,18 +71,47 @@ const Head = () => {
         </a>
       </div>
 
-      <div className="grid-cols-10 mt-3 flex items-center">
-        <input
-          className="py-1 pl-2 border-1 border-black w-3/4 rounded-l-full bg-gray-300"
-          type="text"
-          placeholder="   Search"
-        />
-        <button className="py-1 px-2 border-1 border-black rounded-r-full bg-gray-300">
-          🔍
-        </button>
+      <div>
+        <div className="grid-cols-10 mt-3 flex items-center">
+          <input
+            className="py-1 pl-4 border-1 border-black w-3/4 rounded-l-full bg-gray-300"
+            type="text"
+            placeholder="   Search"
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
+            // onFocus use for focusing
+            onFocus={() => setShowSuggestion(true)}
+            // when remove the focus we use onBlur
+            onBlur={() => setShowSuggestion(false)}
+          />
+          <button className="py-1 px-2 border-1 border-black rounded-r-full bg-gray-300">
+            <img
+              className="h-6"
+              alt="search_image"
+              src="https://www.svgrepo.com/show/148129/search.svg"
+            />
+          </button>
+        </div>
+        <div className="absolute m-1 p-1 w-[28vw] rounded-2xl shadow-2xl bg-white">
+          <ul>
+            {showSuggetion &&
+              searchSuggested.map((suggestion) => {
+                return (
+                  <li className="flex m-1 px-1 p-1 hover:bg-gray-300 rounded-xl">
+                    <img
+                      className="h-5 m-1 px-1 p-1 hover:bg-gray-300 rounded-xl"
+                      alt="search_image"
+                      src="https://www.svgrepo.com/show/148129/search.svg"
+                    />
+                    {suggestion}
+                  </li>
+                );
+              })}
+          </ul>
+        </div>
       </div>
 
-      <div className="flex items-center grid-cols-1">
+      <div className="items-center grid-cols-1">
         <img
           className="h-12"
           alt="User_Image"
