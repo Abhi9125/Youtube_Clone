@@ -261,10 +261,12 @@ function Post() {
 - 01:44:00 JavaScript Merge Objects (object.aasign())
 - 01:49:49 - We have achieved a well organized/optimized search [“debouncing”, “cache”] features <br>
   `Commit -8`
-- 01:55:20 - Developing LRU Cache(Last Recently Used)
+- 01:55:20 - Developing LRU Cache(Last Recently Used) --> self implement
 - 01:59:00 - Interview Question
-  N- level nested components(Reddit Example)
-  Comments Component
+- N- level nested components(Reddit Example)
+  Comments Component<br>
+  `Commit - 9`
+- H.w
   —----------------------------------------------------------------------------------------------------------------------------
   19.(Bonus) Wrapping up YouTube Project
   00:00 - API key expired - Added new key
