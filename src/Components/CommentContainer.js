@@ -93,9 +93,10 @@ const Comment = ({ data }) => {
 
 // Map all the componnennt
 const CommentList = ({ allComments }) =>
-  allComments.map((eachCommet) => {
+  allComments.map((eachCommet, index) => {
     return (
-      <div>
+      // Do not use index as a key
+      <div key={index}>
         <Comment data={eachCommet} />
         {/* Handle reply usinng recursion */}
         <div className="ml-3 px-3 border border-l-black">
